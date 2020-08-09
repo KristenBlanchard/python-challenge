@@ -35,7 +35,15 @@ with open(csvpath,'r') as csvfile:
         revenue_change.append(revenue_loss)
     Total = sum(revenue_change)
 
-    #print(revenue_change)
+    # print(revenue_change)
     monthly_change = Total / len(revenue_change)
     print("$" + str(monthly_change))
   
+    # greatest increase value
+    revenue_increase = max(revenue_change)
+    print("$" + str(revenue_increase))
+
+    # greatest increase month
+    x = revenue_change.index(revenue_increase)
+    month_increase = month[x+1]
+    print(month_increase)
