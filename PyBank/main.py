@@ -19,3 +19,8 @@ with open(csvpath,'r') as csvfile:
         month.append(row[0])
         revenue.append(row[1])
     print(len(month))
+
+    #Revenue 
+    revenue_int = map(int,revenue)
+    total_revenue = (sum(revenue_int))
+    print("$" + str(total_revenue))
