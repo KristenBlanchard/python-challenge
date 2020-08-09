@@ -13,6 +13,7 @@ with open(csvpath,'r') as csvfile:
     header=next(csvreader)
     month = []
     revenue = []
+    revenue_change = []
 
     # month and revenue      
     for row in csvreader:
@@ -24,3 +25,17 @@ with open(csvpath,'r') as csvfile:
     revenue_int = map(int,revenue)
     total_revenue = (sum(revenue_int))
     print("$" + str(total_revenue))
+
+     #Avg Change
+    i = 0
+    for i in range(len(revenue) - 1):
+        revenue_loss = int(revenue[i+1]) - int(revenue[i])
+
+    # append profit_loss
+        revenue_change.append(revenue_loss)
+    Total = sum(revenue_change)
+
+    #print(revenue_change)
+    monthly_change = Total / len(revenue_change)
+    print("$" + str(monthly_change))
+  
