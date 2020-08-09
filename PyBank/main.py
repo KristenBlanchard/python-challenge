@@ -57,4 +57,15 @@ with open(csvpath,'r') as csvfile:
     month_decrease = month[z+1]
     print(month_decrease)
 
-# Final Print Statements
+# final Print Statements
+
+# print title
+print('Financial Analysis')
+print('----------------------------')
+
+# Print final wanted informtation - propper formatting
+print("Total Months: " + str(len(month)))
+print("Total: $ " + str(total_revenue))
+print("Average Change: $" + str(monthly_change))
+print(f"Greatest Increase in Profits: {month_increase} (${revenue_increase})")
+print(f"Greatest Decrease in Profits: {month_decrease} (${revenue_decrease})")
