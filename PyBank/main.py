@@ -62,3 +62,19 @@ print("Total: $ " + str(total_revenue))
 print("Average Change: $" + str(monthly_change))
 print(f"Greatest Increase in Profits: {month_increase} (${revenue_increase})")
 print(f"Greatest Decrease in Profits: {month_decrease} (${revenue_decrease})")
+
+# output all the data
+
+# write to analysis
+output_file = os.path.join('..', 'PyBank', 'Analysis', 'Bank_results.txt')
+
+with open(output_file, 'w') as txtfile:
+    
+    # write to poll results
+    txtfile.write('Financial Analysis\n')
+    txtfile.write('----------------------------\n')
+    txtfile.write("Total Months: " + str(len(month))+'\n')
+    txtfile.write("Total: $ " + str(total_revenue)+'\n')
+    txtfile.write("Average Change: $" + str(monthly_change)+'\n')
+    txtfile.write(f"Greatest Increase in Profits: {month_increase} (${revenue_increase})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {month_decrease} (${revenue_decrease})")
