@@ -84,5 +84,19 @@ print(f"-----------------------------------")
 # output all the data
 
 # write to analysis
-# output_file = os.path.join('..', 'PyPoll', 'Analysis', 'poll_results.txt')
+output_file = os.path.join('PyPoll', 'Analysis', 'poll_results.txt')
 
+with open(output_file, 'w',) as txtfile:
+    
+    # write to poll results
+    txtfile.write(f"Election Results\n")
+    txtfile.write(f"-----------------------------------\n")
+    txtfile.write(f"Total Votes: {total_votes}\n")
+    txtfile.write(f"-----------------------------------\n")
+    txtfile.write(f"Khan: {khan_percent}% ({khan_votes})\n")
+    txtfile.write(f"Correy: {correy_percent}% ({correy_votes})\n")
+    txtfile.write(f"Li: {li_percent}% ({li_votes})\n")
+    txtfile.write(f"O'Tooley: {otooley_percent}% ({otooley_votes})\n")
+    txtfile.write(f"-----------------------------------\n")
+    txtfile.write(f"Winner: {winner}\n")
+    txtfile.write(f"-----------------------------------")
