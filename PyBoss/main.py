@@ -3,6 +3,9 @@ import os
 
 import csv
 
+# ouput
+file_to_output = "PyBoss/Analysis/employee_data_reformatted.csv"
+
 # working directory
 csvpath = os.path.join('PyBoss', 'Resources', 'employee_data.csv')
 # define
@@ -107,4 +110,12 @@ with open(csvpath,'r') as csvfile:
         states.append(us_state_abbrev[row[4]])
 
 # put all new lists together
+employee_list = zip(emp_ids, first_names, last_names, birth, ssn_reformat, states)
 
+# write to analysis
+with open(file_to_output, "w", newline="") as datafile:
+    writer = csv.writer(datafile)
+
+    # write to textfile
+    writer.writerow(["Emp ID", "First Name", "Last Name","DOB", "SSN", "State"])
+    writer.writerows(employee_list)
