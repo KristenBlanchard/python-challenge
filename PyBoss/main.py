@@ -78,8 +78,10 @@ with open(csvpath,'r') as csvfile:
     full_names = []
     first_names = []
     last_names = []
+    DOB = []
     birth = []
     ssns = []
+    ssn_reformat = []
     states = []
 
     # Loop through the rows
@@ -94,4 +96,15 @@ with open(csvpath,'r') as csvfile:
         last_names.append(full_names[1])
 
         # split DOB and then rearrange
-       
+        DOB = row[2].split("-")
+        birth.append(DOB[1] + "/" + DOB[2] + "/" + DOB[0])
+
+        # split SSN and reformat
+        ssns = row[3].split("-")
+        ssn_reformat.append("***-**-" + ssns[2])
+
+        # change state name to abbreviation
+        states.append(us_state_abbrev[row[4]])
+
+# put all new lists together
+
