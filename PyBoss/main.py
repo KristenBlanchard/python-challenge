@@ -5,6 +5,13 @@ import csv
 
 # working directory
 csvpath = os.path.join('PyBoss', 'Resources', 'employee_data.csv')
+# define
+emp_ids = []
+first_names = []
+last_names = []
+birth = []
+ssns = []
+states = []
 
 # read file
 with open(csvpath,'r') as csvfile:
@@ -67,9 +74,24 @@ with open(csvpath,'r') as csvfile:
     }
     
     # define
-    emp_id = []
+    emp_ids = []
+    full_names = []
     first_names = []
     last_names = []
     birth = []
     ssns = []
     states = []
+
+    # Loop through the rows
+    for row in csvreader:
+
+        # append emp_id into list
+        emp_ids.append(row[0])
+
+        # split names
+        full_names = row[1].split(" ")
+        first_names.append(full_names[0])
+        last_names.append(full_names[1])
+
+        # split DOB and then rearrange
+       
