@@ -33,8 +33,29 @@ for word in word_split:
 approx_letter_count = sum(letter_count) / len(letter_count)
 
 # loop through sentence split for words
-for sentence in sentence split:
+for sentence in sentence_split:
+
+    # find out how many of words per sentance
+    words_per_sentence.append(len(sentence.split(" ")))
+
+# find the average of the words per sentence
+average_sentence = sum(words_per_sentence) / float(len(words_per_sentence))
+
+# output
+output = (
+     f"\nParagraph Analysis\n"
+    f"-----------------\n"
+    f"Approximate Word Count: {word_count}\n"
+    f"Approximate Sentence Count: {sentence_count}\n"
+    f"Average Letter Count: {approx_letter_count}\n"
+    f"Average Sentence Length: {average_sentence}\n")
+
+# print statements
+print(output)
 
 
+# export to textfile
+file_output = 'PyParagraph/Analysis/Paragraph1_Analysis.txt'
 
-
+with open(file_output, "w") as txtfile:
+    txtfile.write(output)
