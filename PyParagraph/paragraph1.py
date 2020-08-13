@@ -55,7 +55,7 @@ print(output)
 
 
 # export to textfile
-file_output = 'PyParagraph/Analysis/Paragraph1_Analysis.txt'
+file_output ='PyParagraph/Analysis/Paragraph1_Analysis.txt'
 
 with open(file_output, "w") as txtfile:
     txtfile.write(output)
